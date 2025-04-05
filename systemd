@@ -1,0 +1,20 @@
+/etc/systemd/system/login-monitor.service
+
+
+####
+
+[Unit]
+Description=Monitor de conexiones SSH 24/7
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/ruta/al/script/login_monitor.sh
+WorkingDirectory=/ruta/al/script/
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
+
+####
